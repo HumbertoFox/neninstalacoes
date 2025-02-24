@@ -25,7 +25,6 @@ export default function ProjectsCompnent() {
                     </p>
                     <Button
                         className='text-2xl bg-violet-950 hover:bg-transparent hover:text-black border border-violet-950 p-6 duration-300 rounded mr-auto'
-                        type='button'
                     >
                         Saiba Mais
                     </Button>
@@ -44,7 +43,6 @@ export default function ProjectsCompnent() {
                     </p>
                     <Button
                         className='text-2xl bg-violet-950 hover:bg-transparent hover:text-black border border-violet-950 p-6 duration-300 rounded mr-auto'
-                        type='button'
                     >
                         Saiba Mais
                     </Button>
@@ -71,7 +69,6 @@ export default function ProjectsCompnent() {
                     </p>
                     <Button
                         className='text-2xl bg-violet-950 hover:bg-transparent hover:text-black border border-violet-950 p-6 duration-300 rounded mr-auto'
-                        type='button'
                     >
                         Saiba Mais
                     </Button>
