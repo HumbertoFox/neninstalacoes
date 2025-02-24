@@ -13,11 +13,15 @@ import gsap from 'gsap';
 export default function HeaderComponent() {
     const headerRef = useRef(null);
     const logoRef = useRef(null);
+    const servicesRef = useRef(null);
+    const contactsRef = useRef(null);
 
     useEffect(() => {
         const handleScroll = () => {
             const header = headerRef.current;
             const logo = logoRef.current;
+            const services = servicesRef.current;
+            const contacts = contactsRef.current;
 
             if (window.scrollY > 0) {
                 gsap.to(header, {
@@ -28,14 +32,26 @@ export default function HeaderComponent() {
                     width: 120,
                     duration: 0.3,
                 });
+                gsap.to(services, {
+                    backgroundColor: '#0c101c',
+                });
+                gsap.to(contacts, {
+                    backgroundColor: '#0c101c',
+                });
             } else {
                 gsap.to(header, {
-                    backgroundColor: 'transparent',
+                    backgroundColor: 'rgba(0, 0, 0, 0.1)',
                     duration: 0.3,
                 });
                 gsap.to(logo, {
                     width: 220,
                     duration: 0.3,
+                });
+                gsap.to(services, {
+                    backgroundColor: 'rgba(0, 0, 0, 0.1)'
+                });
+                gsap.to(contacts, {
+                    backgroundColor: 'rgba(0, 0, 0, 0.1)'
                 });
             };
         };
@@ -83,7 +99,10 @@ export default function HeaderComponent() {
                                 Serviços
                                 <IoIosArrowDown className='group-hover:rotate-180 duration-300' />
                             </span>
-                            <ul className='hidden absolute group-hover:flex flex-col gap-3 text-nowrap'>
+                            <ul
+                                className='hidden absolute group-hover:flex flex-col gap-3 text-nowrap pt-2 px-4 pb-4 rounded'
+                                ref={servicesRef}
+                            >
                                 <Link
                                     className='hover:scale-105 duration-300 ease-in-out hover:underline'
                                     href='#'
@@ -111,7 +130,10 @@ export default function HeaderComponent() {
                             </ul>
                         </li>
 
-                        <Link href='#'>
+                        <Link
+                            className='hover:scale-110 duration-300 ease-in-out'
+                            href='#'
+                        >
                             <li>Podcast</li>
                         </Link>
 
@@ -127,7 +149,10 @@ export default function HeaderComponent() {
                                 Contato
                                 <IoIosArrowDown className='group-hover:rotate-180 duration-300' />
                             </span>
-                            <ul className='hidden absolute group-hover:flex flex-col gap-3 text-nowrap'>
+                            <ul
+                                className='hidden absolute group-hover:flex flex-col gap-3 text-nowrap pt-2 px-4 pb-4 rounded'
+                                ref={contactsRef}
+                            >
                                 <Link
                                     className='hover:scale-105 duration-300 ease-in-out hover:underline'
                                     href='#'
