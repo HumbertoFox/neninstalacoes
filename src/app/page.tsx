@@ -1,10 +1,12 @@
 import ClientsComponent from '@/components/clients';
+import DeskComponent from '@/components/desk';
 import EspecialistComponent from '@/components/especialist';
 import NumbersComponent from '@/components/numbers';
 import PortfolioComponent from '@/components/portfolio';
 import PresentationComponent from '@/components/presentation';
 import ProjectsCompnent from '@/components/projects';
 import StartComponet from '@/components/start';
+import TalktoanexpertComponent from '@/components/talktoanexpert';
 
 export default function Home() {
   return (
@@ -17,6 +19,8 @@ export default function Home() {
         <PortfolioComponent />
         <EspecialistComponent />
         <PresentationComponent />
+        <TalktoanexpertComponent />
+        <DeskComponent />
       </main>
     </div>
   );

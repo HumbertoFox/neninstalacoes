@@ -29,16 +29,17 @@ export default function PresentationComponent() {
                     </p>
                 </div>
 
-                <div className='w-4/5'>
+                <div className='max-w-5xl'>
                     <Swiper
                         slidesPerView={2}
+                        spaceBetween={50}
                         centeredSlides={false}
                         slidesPerGroupSkip={1}
                         keyboard={{
                             enabled: true,
                         }}
                         breakpoints={{
-                            769: {
+                            1024: {
                                 slidesPerView: 2,
                                 slidesPerGroup: 2,
                             },

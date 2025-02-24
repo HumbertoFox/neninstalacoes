@@ -176,7 +176,7 @@ export default function HeaderComponent() {
 
                         <Link
                             className='hover:bg-white hover:text-black border-2 border-white rounded duration-300'
-                            href='#'
+                            href='#talkexpert'
                         >
                             <li className='text-nowrap p-3 hover:scale-105 duration-300 ease-in-out'>
                                 Fale com um especialista
