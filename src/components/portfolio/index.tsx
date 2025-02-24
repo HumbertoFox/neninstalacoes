@@ -28,7 +28,9 @@ export default function PortfolioComponent() {
     return (
         <section className='w-full flex justify-center bg-black py-24'>
             <div className='w-full max-w-screen-2xl flex flex-col justify-center items-center gap-12 text-white'>
-                <h3 className='text-2xl font-normal uppercase'>Conheça o nosso portfólio</h3>
+                <h3 className='text-2xl font-normal uppercase'>
+                    Conheça o nosso portfólio
+                </h3>
                 <div className='w-full h-[60vh] py-8'>
                     <Swiper
                         className='w-full h-full'
@@ -131,7 +133,6 @@ export default function PortfolioComponent() {
                 </div>
                 <Button
                     className='text-3xl font-normal py-7 px-9 border border-white bg-transparent hover:bg-white hover:text-black rounded duration-300'
-                    type='button'
                 >
                     Veja mais
                 </Button>

@@ -22,19 +22,19 @@ export default function StartComponet() {
                 <div className='w-full max-w-[980px] flex max-lg:flex-col items-center justify-center gap-3 font-robotto font-bold uppercase text-2xl text-center mx-12'>
                     <Link
                         className='w-full max-w-[300px]'
-                        href='#'
+                        href='#executive'
                     >
                         <p className='p-3'>Projeto Executivo</p>
                     </Link>
                     <Link
                         className='w-full max-w-[300px]'
-                        href='#'
+                        href='#corporative'
                     >
                         <p className='border-x-2 p-3'>Turn Key</p>
                     </Link>
                     <Link
                         className='w-full max-w-[300px]'
-                        href='#'
+                        href='#turnkey'
                     >
                         <p className='p-3'>Obras Corporativas</p>
                     </Link>
