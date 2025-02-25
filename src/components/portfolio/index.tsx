@@ -4,14 +4,10 @@ import {
     Swiper,
     SwiperSlide
 } from 'swiper/react';
-import {
-    EffectCoverflow,
-    Pagination,
-} from 'swiper/modules';
+import { EffectCoverflow } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import imgSlide0 from '@/components/images/portfolio/grid-huawei.png';
 import imgSlide1 from '@/components/images/portfolio/grid-edf-norte.png';
 import imgSlide2 from '@/components/images/portfolio/grid-edf-macae.png';
@@ -22,18 +18,36 @@ import imgSlide6 from '@/components/images/portfolio/brother-1.png';
 import imgSlide7 from '@/components/images/portfolio/atg-1.png';
 import imgSlide8 from '@/components/images/portfolio/bondinho-1.png';
 import imgSlide9 from '@/components/images/portfolio/passei-direto-1.png';
-import { Button } from '../ui/button';
+import { Button } from '@/components/ui/button';
+
+interface PortfolioItem {
+    src: StaticImageData;
+    alt: string;
+};
+
+const portfolioData: PortfolioItem[] = [
+    { src: imgSlide0, alt: 'Imagem Huawei' },
+    { src: imgSlide1, alt: 'Imagem Edf Norte' },
+    { src: imgSlide2, alt: 'Imagem Edf Macae' },
+    { src: imgSlide3, alt: 'Imagem lalamove' },
+    { src: imgSlide4, alt: 'Imagem eneva' },
+    { src: imgSlide5, alt: 'Imagem eneva' },
+    { src: imgSlide6, alt: 'Imagem brother' },
+    { src: imgSlide7, alt: 'Imagem atg' },
+    { src: imgSlide8, alt: 'Imagem bondinho' },
+    { src: imgSlide9, alt: 'Imagem passei' },
+];
 
 export default function PortfolioComponent() {
     return (
-        <section className='w-full flex justify-center bg-black py-24'>
-            <div className='w-full max-w-screen-2xl flex flex-col justify-center items-center gap-12 text-white'>
+        <section className='w-full flex justify-center items-center bg-black py-24'>
+            <div className='w-full max-w-screen-2xl min-h-full flex flex-col justify-center items-center gap-12 text-white'>
                 <h3 className='text-2xl font-normal uppercase'>
                     Conheça o nosso portfólio
                 </h3>
-                <div className='w-full h-[60vh] py-8'>
+                <div className='w-full min-h-full py-8'>
                     <Swiper
-                        className='w-full h-full'
+                        className='w-full h-[380px]'
                         effect={'coverflow'}
                         grabCursor={true}
                         centeredSlides={true}
@@ -46,89 +60,18 @@ export default function PortfolioComponent() {
                             modifier: 1,
                             slideShadows: true,
                         }}
-                        pagination={true}
-                        modules={[EffectCoverflow, Pagination]}
+                        modules={[EffectCoverflow]}
                     >
-                        <SwiperSlide className='w-full h-full flex justify-center items-center'>
-                            <Image
-                                className='object-cover'
-                                src={imgSlide0}
-                                alt='Imagem Huawei'
-                                fill
-                            />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Image
-                                className='object-cover'
-                                src={imgSlide1}
-                                alt='Imagem Edf Norte'
-                                fill
-                            />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Image
-                                src={imgSlide2}
-                                className='object-cover'
-                                fill
-                                alt='Imagem Edf Macae'
-                            />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Image
-                                src={imgSlide3}
-                                className='object-cover'
-                                fill
-                                alt='Imagem lalamove'
-                            />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Image
-                                className='object-cover'
-                                src={imgSlide4}
-                                alt='Imagem eneva'
-                                fill
-                            />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Image
-                                className='object-cover'
-                                src={imgSlide5}
-                                alt='Imagem eneva'
-                                fill
-                            />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Image
-                                className='object-cover'
-                                src={imgSlide6}
-                                alt='Imagem brother'
-                                fill
-                            />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Image
-                                className='object-cover'
-                                src={imgSlide7}
-                                alt='Imagem atg'
-                                fill
-                            />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Image
-                                className='object-cover'
-                                src={imgSlide8}
-                                alt='Imagem bondinho'
-                                fill
-                            />
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <Image
-                                className='object-cover'
-                                src={imgSlide9}
-                                alt='Imagem passei'
-                                fill
-                            />
-                        </SwiperSlide>
+                        {portfolioData.map((portfolio, index) => (
+                            <SwiperSlide key={index}>
+                                <Image
+                                    className='object-cover'
+                                    src={portfolio.src}
+                                    alt={portfolio.alt}
+                                    fill
+                                />
+                            </SwiperSlide>
+                        ))}
                     </Swiper>
                 </div>
                 <Button

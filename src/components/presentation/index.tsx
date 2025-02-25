@@ -18,7 +18,7 @@ import Image from 'next/image';
 
 export default function PresentationComponent() {
     return (
-        <section className='w-full flex justify-center gap-12 bg-gray-200 py-20'>
+        <section className='w-full flex justify-center items-center gap-12 bg-gray-200 py-20'>
             <div className='w-full max-w-screen-2xl flex flex-col items-center gap-12 font-robotto'>
                 <div className='uppercase text-2xl font-normal text-center'>
                     <p>
@@ -32,17 +32,11 @@ export default function PresentationComponent() {
                 <div className='max-w-5xl'>
                     <Swiper
                         slidesPerView={2}
+                        grabCursor={true}
                         spaceBetween={50}
                         centeredSlides={false}
-                        slidesPerGroupSkip={1}
                         keyboard={{
                             enabled: true,
-                        }}
-                        breakpoints={{
-                            1024: {
-                                slidesPerView: 2,
-                                slidesPerGroup: 2,
-                            },
                         }}
                         navigation={true}
                         modules={[

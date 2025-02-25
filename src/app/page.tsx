@@ -1,3 +1,4 @@
+import BlogComponent from '@/components/blog';
 import ClientsComponent from '@/components/clients';
 import DeskComponent from '@/components/desk';
 import EspecialistComponent from '@/components/especialist';
@@ -21,6 +22,7 @@ export default function Home() {
         <PresentationComponent />
         <TalktoanexpertComponent />
         <DeskComponent />
+        <BlogComponent />
       </main>
     </div>
   );
