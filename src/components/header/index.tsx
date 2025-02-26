@@ -3,20 +3,28 @@
 import Image from 'next/image';
 import LogoHeader from '@/components/images/logo-custodio.png';
 import Link from 'next/link';
-import { IoIosArrowDown } from 'react-icons/io';
 import {
     useEffect,
-    useRef
+    useRef,
+    useState
 } from 'react';
 import gsap from 'gsap';
 import { usePathname } from 'next/navigation';
+import {
+    IoClose,
+    IoMenu
+} from 'react-icons/io5';
+import MenuWidthComponent from '@/components/menuwidth';
 
 export default function HeaderComponent() {
     const pathname = usePathname();
     const headerRef = useRef(null);
     const logoRef = useRef(null);
-    const servicesRef = useRef(null);
-    const contactsRef = useRef(null);
+    const servicesRef = useRef<HTMLUListElement | null>(null);
+    const contactsRef = useRef<HTMLUListElement | null>(null);
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => setMenuOpen(!menuOpen);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -79,7 +87,6 @@ export default function HeaderComponent() {
             window.removeEventListener('scroll', handleScroll);
         };
     }, [pathname]);
-
     return (
         <header
             className='fixed top-0 w-full flex justify-center py-7 z-10'
@@ -95,111 +102,25 @@ export default function HeaderComponent() {
                         alt='Logo Empresa'
                     />
                 </Link>
-                <nav className='flex max-[1080px]:hidden font-robotto'>
-                    <ul className='w-full flex items-center gap-8 font-medium text-white'>
-                        <Link
-                            className='hover:scale-110 duration-300 ease-in-out'
-                            href='/'
-                        >
-                            <li>Home</li>
-                        </Link>
+                <nav className='flex items-center text-white font-robotto'>
+                    <button
+                        className='w-10 h-10 hidden max-[1080px]:block duration-300'
+                        title='Menu'
+                        type='button'
+                        onClick={toggleMenu}
+                    >
+                        {menuOpen ? (
+                            <IoClose className='w-full h-full' />
+                        ) : (
+                            <IoMenu className='w-full h-full' />
+                        )}
+                    </button>
 
-                        <Link
-                            className='hover:scale-110 duration-300 ease-in-out'
-                            href='/portfolio'
-                        >
-                            <li>Portfólio</li>
-                        </Link>
-
-                        <li className='relative group cursor-default'>
-                            <span className='flex gap-1 items-center'>
-                                Serviços
-                                <IoIosArrowDown className='group-hover:rotate-180 duration-300' />
-                            </span>
-                            <ul
-                                className='hidden absolute group-hover:flex flex-col gap-3 text-nowrap pt-2 px-4 pb-4 rounded'
-                                ref={servicesRef}
-                            >
-                                <Link
-                                    className='hover:scale-105 duration-300 ease-in-out hover:underline'
-                                    href='#'
-                                >
-                                    <li>O que fazemos - projeto executivo</li>
-                                </Link>
-                                <Link
-                                    className='hover:scale-105 duration-300 ease-in-out hover:underline'
-                                    href='#'
-                                >
-                                    <li>Estudo de viabilidade</li>
-                                </Link>
-                                <Link
-                                    className='hover:scale-105 duration-300 ease-in-out hover:underline'
-                                    href='#'
-                                >
-                                    <li>O que fazemos - Obra Corporativa</li>
-                                </Link>
-                                <Link
-                                    className='hover:scale-105 duration-300 ease-in-out hover:underline'
-                                    href='#'
-                                >
-                                    <li>O que fazemos - Turnkey</li>
-                                </Link>
-                            </ul>
-                        </li>
-
-                        <Link
-                            className='hover:scale-110 duration-300 ease-in-out'
-                            href='/podcast'
-                        >
-                            <li>Podcast</li>
-                        </Link>
-
-                        <Link
-                            className='hover:scale-110 duration-300 ease-in-out'
-                            href='#'
-                        >
-                            <li>Notícias</li>
-                        </Link>
-
-                        <li className='relative group cursor-default'>
-                            <span className='flex gap-1 items-center'>
-                                Contato
-                                <IoIosArrowDown className='group-hover:rotate-180 duration-300' />
-                            </span>
-                            <ul
-                                className='hidden absolute group-hover:flex flex-col gap-3 text-nowrap pt-2 px-4 pb-4 rounded'
-                                ref={contactsRef}
-                            >
-                                <Link
-                                    className='hover:scale-105 duration-300 ease-in-out hover:underline'
-                                    href='#'
-                                >
-                                    <li>Contato</li>
-                                </Link>
-                                <Link
-                                    className='hover:scale-105 duration-300 ease-in-out hover:underline'
-                                    href='#'
-                                >
-                                    <li>Seja um Fornecedor</li>
-                                </Link>
-                                <Link
-                                    className='hover:scale-105 duration-300 ease-in-out hover:underline'
-                                    href='#'
-                                >
-                                    <li>Trabalhe Conosco</li>
-                                </Link>
-                            </ul>
-                        </li>
-
-                        <Link
-                            className='hover:bg-white hover:text-black border-2 border-white rounded duration-300'
-                            href={pathname !== '/' ? '/#talkexpert' : '#talkexpert'}
-                        >
-                            <li className='text-nowrap p-3 hover:scale-105 duration-300 ease-in-out'>
-                                Fale com um especialista
-                            </li>
-                        </Link>
-                    </ul>
+                    <MenuWidthComponent
+                        servicesRef={servicesRef}
+                        contactsRef={contactsRef}
+                        pathname={pathname}
+                    />
                 </nav>
             </div>
         </header>

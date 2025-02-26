@@ -1,12 +1,34 @@
+'use client';
+
 import Image from 'next/image';
 import Logo from '@/components/images/logo-custodio.png';
+import LogoBfn from '@/components/images/LOGO_BFN_INTER.png';
 import { BsInstagram } from 'react-icons/bs';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function FooterComponent() {
+    const patchname = usePathname();
     return (
         <footer className='w-full flex justify-center bg-black py-8'>
             <div className='w-full max-w-screen-2xl flex justify-evenly max-lg:flex-col max-lg:items-center max-lg:gap-12 font-robotto text-white'>
+                <div className='flex flex-col'>
+                    <p className='font-bold text-sm'>
+                        Desenvolvido por:
+                    </p>
+
+                    <Link
+                        className='w-28 h-28'
+                        href='https://betofoxnet-info.vercel.app/'
+                        target='_blank'
+                    >
+                        <Image
+                            src={LogoBfn}
+                            alt='Logo BetoFoxNet_Info'
+                        />
+                    </Link>
+                </div>
+
                 <div className='max-w-80 flex flex-col items-center gap-3'>
                     <Image
                         src={Logo}
@@ -30,7 +52,7 @@ export default function FooterComponent() {
                         <li>
                             <Link
                                 className='hover:text-gray-400 duration-300'
-                                href='#'
+                                href={patchname !== '/' ? '/' : '#'}
                             >
                                 Home
                             </Link>
@@ -46,7 +68,7 @@ export default function FooterComponent() {
                         <li>
                             <Link
                                 className='hover:text-gray-400 duration-300'
-                                href='#'
+                                href='/podcast'
                             >
                                 Podcast
                             </Link>
@@ -101,6 +123,7 @@ export default function FooterComponent() {
                         <Link
                             className='hover:text-blue-400 duration-300'
                             href='tel:+552135491204'
+                            target='_blank'
                         >
                             RJ | +55 21 3549-1204
                         </Link>
@@ -108,6 +131,7 @@ export default function FooterComponent() {
                         <Link
                             className='hover:text-blue-400 duration-300'
                             href='tel:+551151826361'
+                            target='_blank'
                         >
                             SP | +55 11 5182-6361
                         </Link>
@@ -115,6 +139,7 @@ export default function FooterComponent() {
                         <Link
                             className='hover:text-red-400 duration-300'
                             href='mailto:contato@custodio.arq.br'
+                            target='_blank'
                         >
                             contato@custodio.arq.br
                         </Link>
