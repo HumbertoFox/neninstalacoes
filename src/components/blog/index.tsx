@@ -51,9 +51,19 @@ export default function BlogComponent() {
                 <div className='w-full min-h-full'>
                     <Swiper
                         grabCursor={true}
-                        slidesPerView={3}
                         spaceBetween={10}
                         loop={true}
+                        breakpoints={{
+                            640: {
+                                slidesPerView: 1,
+                            },
+                            860: {
+                                slidesPerView: 2,
+                            },
+                            1280: {
+                                slidesPerView: 3,
+                            },
+                        }}
                     >
                         {blogData.map((blog, index) => (
                             <SwiperSlide key={index}>

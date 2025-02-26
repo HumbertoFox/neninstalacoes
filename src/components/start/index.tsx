@@ -13,7 +13,7 @@ export default function StartComponet() {
             />
             <div className='absolute top-0 left-0 w-full h-full bg-black opacity-50' />
             <div className='absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center gap-2 text-white text-center font-robotto_cond'>
-                <h1 className='uppercase text-7xl font-black'>
+                <h1 className='uppercase text-7xl max-[1080px]:text-5xl font-black'>
                     Transforme o seu escritório
                 </h1>
                 <p className='font-robotto font-bold text-2xl mb-12'>

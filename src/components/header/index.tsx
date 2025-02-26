@@ -95,7 +95,7 @@ export default function HeaderComponent() {
                         alt='Logo Empresa'
                     />
                 </Link>
-                <nav className='flex font-robotto'>
+                <nav className='flex max-[1080px]:hidden font-robotto'>
                     <ul className='w-full flex items-center gap-8 font-medium text-white'>
                         <Link
                             className='hover:scale-110 duration-300 ease-in-out'

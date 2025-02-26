@@ -51,7 +51,6 @@ export default function PortfolioComponent() {
                         effect={'coverflow'}
                         grabCursor={true}
                         centeredSlides={true}
-                        slidesPerView={3}
                         loop={true}
                         coverflowEffect={{
                             rotate: 50,
@@ -61,6 +60,14 @@ export default function PortfolioComponent() {
                             slideShadows: true,
                         }}
                         modules={[EffectCoverflow]}
+                        breakpoints={{
+                            768: {
+                                slidesPerView: 1,
+                            },
+                            860: {
+                                slidesPerView: 3,
+                            },
+                        }}
                     >
                         {portfolioData.map((portfolio, index) => (
                             <SwiperSlide key={index}>

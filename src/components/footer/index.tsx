@@ -6,7 +6,7 @@ import Link from 'next/link';
 export default function FooterComponent() {
     return (
         <footer className='w-full flex justify-center bg-black py-8'>
-            <div className='w-full max-w-screen-2xl flex justify-evenly font-robotto text-white'>
+            <div className='w-full max-w-screen-2xl flex justify-evenly max-lg:flex-col max-lg:items-center max-lg:gap-12 font-robotto text-white'>
                 <div className='max-w-80 flex flex-col items-center gap-3'>
                     <Image
                         src={Logo}

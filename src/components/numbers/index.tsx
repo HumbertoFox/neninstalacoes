@@ -59,7 +59,7 @@ export default function NumbersComponent() {
         >
             <div className='w-full max-w-screen-2xl flex flex-col items-center gap-16 text-white font-robotto'>
                 <h3 className='text-2xl font-normal uppercase'>Nossos números</h3>
-                <div className='w-full flex justify-evenly'>
+                <div className='w-full flex max-lg:flex-col max-lg:gap-8 justify-evenly'>
                     <div className='flex flex-col gap-3 items-center'>
                         <h6 className='text-5xl font-extrabold'>+<span ref={refSpan500}>0</span></h6>
                         <p className='text-2xl font-normal'>clientes atendidos</p>

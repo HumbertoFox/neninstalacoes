@@ -8,8 +8,8 @@ export default function TalktoanexpertComponent() {
             id='talkexpert'
         >
             <div className='w-full max-w-screen-2xl flex flex-col items-center gap-6 font-robotto text-white pt-28'>
-                <div className='w-full flex items-center justify-evenly'>
-                    <div className='max-w-xl flex flex-col gap-12'>
+                <div className='w-full flex max-lg:flex-col items-center justify-evenly max-lg:gap-12'>
+                    <div className='max-w-xl flex flex-col gap-12 max-lg:text-center'>
                         <h4 className='text-5xl font-bold'>
                             Viabilize o futuro do seu escritório corporativo
                         </h4>

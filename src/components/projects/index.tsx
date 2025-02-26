@@ -9,7 +9,7 @@ export default function ProjectsCompnent() {
         <section className='w-full flex justify-center bg-gray-200'>
             <div className='w-full max-w-screen-2xl flex flex-col items-center'>
                 <div
-                    className='flex gap-9 pt-20'
+                    className='flex max-lg:flex-col-reverse gap-9 pt-20'
                     id='executive'
                 >
                     <Image
@@ -36,7 +36,7 @@ export default function ProjectsCompnent() {
                 </div>
 
                 <div
-                    className='flex gap-9 pt-20'
+                    className='flex max-lg:flex-col gap-9 pt-20'
                     id='corporative'
                 >
                     <div className='max-w-[500px] flex flex-col justify-center gap-4 font-robotto'>
@@ -61,7 +61,7 @@ export default function ProjectsCompnent() {
                 </div>
 
                 <div
-                    className='flex gap-9 py-20'
+                    className='flex max-lg:flex-col-reverse gap-9 py-20'
                     id='turnkey'
                 >
                     <Image

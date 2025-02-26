@@ -29,7 +29,7 @@ export default function PresentationComponent() {
                     </p>
                 </div>
 
-                <div className='max-w-5xl'>
+                <div className='max-w-5xl max-lg:max-w-full'>
                     <Swiper
                         slidesPerView={2}
                         grabCursor={true}
@@ -43,6 +43,14 @@ export default function PresentationComponent() {
                             Keyboard,
                             Navigation
                         ]}
+                        breakpoints={{
+                            768: {
+                                slidesPerView: 1,
+                            },
+                            769: {
+                                slidesPerView: 2,
+                            },
+                        }}
                     >
                         <SwiperSlide>
                             <Image
