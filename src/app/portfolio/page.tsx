@@ -22,11 +22,11 @@ import { Button } from '@/components/ui/button';
 
 export default function ProtfolioPage() {
     return (
-        <section
+        <main
             className='w-full min-h-screen flex justify-center pt-36 pb-10'
-            id='section'
+            id='main'
         >
-            <div className='w-full max-w-screen-2xl flex flex-col items-center justify-center font-robotto'>
+            <section className='w-full max-w-screen-2xl flex flex-col items-center justify-center font-robotto'>
                 <div className='w-full flex justify-end text-sm italic'>
                     <Link
                         className='hover:text-gray-500 hover:font-bold duration-300'
@@ -85,9 +85,9 @@ export default function ProtfolioPage() {
                     className='text-lg bg-violet-950 hover:bg-transparent hover:text-black border border-violet-950 p-6 duration-300 rounded my-12'
                     asChild
                 >
-                    <Link href='#section'>voltar ao topo</Link>
+                    <Link href='#main'>voltar ao topo</Link>
                 </Button>
-            </div>
-        </section>
+            </section>
+        </main>
     );
 }
