@@ -41,7 +41,7 @@ export default function HeaderComponent() {
                     backgroundColor: '#0c101c',
                 });
             } else {
-                if (pathname === '/') {
+                if (pathname === '/' || pathname === '/podcast') {
                     gsap.to(header, {
                         backgroundColor: 'rgba(0, 0, 0, 0.1)',
                         duration: 0.3,
@@ -149,7 +149,7 @@ export default function HeaderComponent() {
 
                         <Link
                             className='hover:scale-110 duration-300 ease-in-out'
-                            href='#'
+                            href='/podcast'
                         >
                             <li>Podcast</li>
                         </Link>
@@ -193,7 +193,7 @@ export default function HeaderComponent() {
 
                         <Link
                             className='hover:bg-white hover:text-black border-2 border-white rounded duration-300'
-                            href='#talkexpert'
+                            href={pathname !== '/' ? '/#talkexpert' : '#talkexpert'}
                         >
                             <li className='text-nowrap p-3 hover:scale-105 duration-300 ease-in-out'>
                                 Fale com um especialista

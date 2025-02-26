@@ -13,7 +13,7 @@ const robottoSans = Roboto({
 const robotto_Cond_Sans = Roboto_Condensed({
   variable: '--font-robotto-cond-sans',
   subsets: ['latin'],
-  weight: ['900']
+  weight: ['400', '900']
 });
 
 export const metadata: Metadata = {
