@@ -5,16 +5,12 @@ import LogoHeader from '@/components/images/logo-custodio.png';
 import Link from 'next/link';
 import {
     useEffect,
-    useRef,
-    useState
+    useRef
 } from 'react';
 import gsap from 'gsap';
 import { usePathname } from 'next/navigation';
-import {
-    IoClose,
-    IoMenu
-} from 'react-icons/io5';
 import MenuWidthComponent from '@/components/menuwidth';
+import MenuHeightComponent from '../menuheight';
 
 export default function HeaderComponent() {
     const pathname = usePathname();
@@ -22,9 +18,6 @@ export default function HeaderComponent() {
     const logoRef = useRef(null);
     const servicesRef = useRef<HTMLUListElement | null>(null);
     const contactsRef = useRef<HTMLUListElement | null>(null);
-    const [menuOpen, setMenuOpen] = useState(false);
-
-    const toggleMenu = () => setMenuOpen(!menuOpen);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -103,18 +96,7 @@ export default function HeaderComponent() {
                     />
                 </Link>
                 <nav className='flex items-center text-white font-robotto'>
-                    <button
-                        className='w-10 h-10 hidden max-[1080px]:block duration-300'
-                        title='Menu'
-                        type='button'
-                        onClick={toggleMenu}
-                    >
-                        {menuOpen ? (
-                            <IoClose className='w-full h-full' />
-                        ) : (
-                            <IoMenu className='w-full h-full' />
-                        )}
-                    </button>
+                    <MenuHeightComponent />
 
                     <MenuWidthComponent
                         servicesRef={servicesRef}

@@ -1,13 +1,8 @@
 'use client';
 
+import { MenuWidthProps } from '@/interface/interfaces';
 import Link from 'next/link';
 import { IoIosArrowDown } from 'react-icons/io';
-
-interface MenuWidthProps {
-    servicesRef: React.RefObject<HTMLUListElement | null>;
-    contactsRef: React.RefObject<HTMLUListElement | null>;
-    pathname: string;
-};
 
 export default function MenuWidthComponent({
     servicesRef,
@@ -15,20 +10,24 @@ export default function MenuWidthComponent({
     pathname
 }: MenuWidthProps) {
     return (
-        <ul className='w-full flex max-[1080px]:hidden items-center gap-8 font-medium'>
-            <Link
-                className='hover:scale-110 duration-300 ease-in-out'
-                href='/'
-            >
-                <li>Home</li>
-            </Link>
+        <ul className='w-full h-full flex max-[1080px]:hidden items-center gap-8 font-medium'>
+            <li className='hover:scale-110 duration-300 ease-in-out'>
+                <Link
+                    className='p-1'
+                    href='/'
+                >
+                    Home
+                </Link>
+            </li>
 
-            <Link
-                className='hover:scale-110 duration-300 ease-in-out'
-                href='/portfolio'
-            >
-                <li>Portfólio</li>
-            </Link>
+            <li className='hover:scale-110 duration-300 ease-in-out'>
+                <Link
+                    className='p-1'
+                    href='/portfolio'
+                >
+                    Portfólio
+                </Link>
+            </li>
 
             <li className='relative group cursor-default'>
                 <span className='flex gap-1 items-center'>
@@ -39,46 +38,58 @@ export default function MenuWidthComponent({
                     className='hidden absolute group-hover:flex flex-col gap-3 text-nowrap pt-2 px-4 pb-4 rounded'
                     ref={servicesRef}
                 >
-                    <Link
-                        className='hover:scale-105 duration-300 ease-in-out hover:underline'
-                        href='#'
-                    >
-                        <li>O que fazemos - projeto executivo</li>
-                    </Link>
-                    <Link
-                        className='hover:scale-105 duration-300 ease-in-out hover:underline'
-                        href='#'
-                    >
-                        <li>Estudo de viabilidade</li>
-                    </Link>
-                    <Link
-                        className='hover:scale-105 duration-300 ease-in-out hover:underline'
-                        href='#'
-                    >
-                        <li>O que fazemos - Obra Corporativa</li>
-                    </Link>
-                    <Link
-                        className='hover:scale-105 duration-300 ease-in-out hover:underline'
-                        href='#'
-                    >
-                        <li>O que fazemos - Turnkey</li>
-                    </Link>
+                    <li className='hover:scale-105 duration-300 ease-in-out hover:underline'>
+                        <Link
+                            className='p-1'
+                            href='#'
+                        >
+                            O que fazemos - projeto executivo
+                        </Link>
+                    </li>
+                    <li className='hover:scale-105 duration-300 ease-in-out hover:underline'>
+                        <Link
+                            className='p-1'
+                            href='#'
+                        >
+                            Estudo de viabilidade
+                        </Link>
+                    </li>
+                    <li className='hover:scale-105 duration-300 ease-in-out hover:underline'>
+                        <Link
+                            className='p-1'
+                            href='#'
+                        >
+                            O que fazemos - Obra Corporativa
+                        </Link>
+                    </li>
+                    <li className='hover:scale-105 duration-300 ease-in-out hover:underline'>
+                        <Link
+                            className='p-1'
+                            href='#'
+                        >
+                            O que fazemos - Turnkey
+                        </Link>
+                    </li>
                 </ul>
             </li>
 
-            <Link
-                className='hover:scale-110 duration-300 ease-in-out'
-                href='/podcast'
-            >
-                <li>Podcast</li>
-            </Link>
+            <li className='hover:scale-110 duration-300 ease-in-out'>
+                <Link
+                    className='p-1'
+                    href='/podcast'
+                >
+                    Podcast
+                </Link>
+            </li>
 
-            <Link
-                className='hover:scale-110 duration-300 ease-in-out'
-                href='#'
-            >
-                <li>Notícias</li>
-            </Link>
+            <li className='hover:scale-110 duration-300 ease-in-out'>
+                <Link
+                    className='p-1'
+                    href='#'
+                >
+                    Notícias
+                </Link>
+            </li>
 
             <li className='relative group cursor-default'>
                 <span className='flex gap-1 items-center'>
@@ -89,35 +100,41 @@ export default function MenuWidthComponent({
                     className='hidden absolute group-hover:flex flex-col gap-3 text-nowrap pt-2 px-4 pb-4 rounded'
                     ref={contactsRef}
                 >
-                    <Link
-                        className='hover:scale-105 duration-300 ease-in-out hover:underline'
-                        href='#'
-                    >
-                        <li>Contato</li>
-                    </Link>
-                    <Link
-                        className='hover:scale-105 duration-300 ease-in-out hover:underline'
-                        href='#'
-                    >
-                        <li>Seja um Fornecedor</li>
-                    </Link>
-                    <Link
-                        className='hover:scale-105 duration-300 ease-in-out hover:underline'
-                        href='#'
-                    >
-                        <li>Trabalhe Conosco</li>
-                    </Link>
+                    <li className='hover:scale-105 duration-300 ease-in-out hover:underline'>
+                        <Link
+                            className='p-1'
+                            href='#'
+                        >
+                            Contato
+                        </Link>
+                    </li>
+                    <li className='hover:scale-105 duration-300 ease-in-out hover:underline'>
+                        <Link
+                            className='p-1'
+                            href='#'
+                        >
+                            Seja um Fornecedor
+                        </Link>
+                    </li>
+                    <li className='hover:scale-105 duration-300 ease-in-out hover:underline'>
+                        <Link
+                            className='p-1'
+                            href='#'
+                        >
+                            Trabalhe Conosco
+                        </Link>
+                    </li>
                 </ul>
             </li>
 
-            <Link
-                className='hover:bg-white hover:text-black border-2 border-white rounded duration-300'
-                href={pathname !== '/' ? '/#talkexpert' : '#talkexpert'}
-            >
-                <li className='text-nowrap p-3 hover:scale-105 duration-300 ease-in-out'>
+            <li className='flex hover:bg-white hover:text-black border-2 border-white rounded duration-300'>
+                <Link
+                    className='text-nowrap p-3 hover:scale-105 duration-300 ease-in-out'
+                    href={pathname !== '/' ? '/#talkexpert' : '#talkexpert'}
+                >
                     Fale com um especialista
-                </li>
-            </Link>
+                </Link>
+            </li>
         </ul>
     );
 }

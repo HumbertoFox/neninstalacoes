@@ -27,7 +27,7 @@ export default function ProtfolioPage() {
             id='main'
         >
             <section className='w-full max-w-screen-2xl flex flex-col items-center justify-center font-robotto'>
-                <div className='w-full flex justify-end text-sm italic'>
+                <div className='w-full flex justify-end text-sm italic pr-2'>
                     <Link
                         className='hover:text-gray-500 hover:font-bold duration-300'
                         href='/'
