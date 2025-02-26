@@ -9,8 +9,10 @@ import {
     useRef
 } from 'react';
 import gsap from 'gsap';
+import { usePathname } from 'next/navigation';
 
 export default function HeaderComponent() {
+    const pathname = usePathname();
     const headerRef = useRef(null);
     const logoRef = useRef(null);
     const servicesRef = useRef(null);
@@ -39,19 +41,33 @@ export default function HeaderComponent() {
                     backgroundColor: '#0c101c',
                 });
             } else {
-                gsap.to(header, {
-                    backgroundColor: 'rgba(0, 0, 0, 0.1)',
-                    duration: 0.3,
-                });
+                if (pathname === '/') {
+                    gsap.to(header, {
+                        backgroundColor: 'rgba(0, 0, 0, 0.1)',
+                        duration: 0.3,
+                    });
+                    gsap.to(services, {
+                        backgroundColor: 'rgba(0, 0, 0, 0.1)'
+                    });
+                    gsap.to(contacts, {
+                        backgroundColor: 'rgba(0, 0, 0, 0.1)'
+                    });
+                } else {
+                    gsap.to(header, {
+                        backgroundColor: '#0c101c',
+                        duration: 0.3,
+                    });
+                    gsap.to(services, {
+                        backgroundColor: '#0c101c',
+                    });
+                    gsap.to(contacts, {
+                        backgroundColor: '#0c101c',
+                    });
+                };
+
                 gsap.to(logo, {
                     width: 220,
                     duration: 0.3,
-                });
-                gsap.to(services, {
-                    backgroundColor: 'rgba(0, 0, 0, 0.1)'
-                });
-                gsap.to(contacts, {
-                    backgroundColor: 'rgba(0, 0, 0, 0.1)'
                 });
             };
         };
@@ -62,7 +78,8 @@ export default function HeaderComponent() {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, []);
+    }, [pathname]);
+
     return (
         <header
             className='fixed top-0 w-full flex justify-center py-7 z-10'
@@ -82,14 +99,14 @@ export default function HeaderComponent() {
                     <ul className='w-full flex items-center gap-8 font-medium text-white'>
                         <Link
                             className='hover:scale-110 duration-300 ease-in-out'
-                            href='#'
+                            href='/'
                         >
                             <li>Home</li>
                         </Link>
 
                         <Link
                             className='hover:scale-110 duration-300 ease-in-out'
-                            href='#'
+                            href='/portfolio'
                         >
                             <li>Portfólio</li>
                         </Link>
