@@ -7,7 +7,7 @@ export default function TalktoanexpertComponent() {
             className='w-full flex justify-center bg-[url("/bg-contact.png")] bg-cover pb-16'
             id='talkexpert'
         >
-            <div className='w-full max-w-screen-2xl flex flex-col items-center gap-6 font-robotto text-white pt-28'>
+            <div className='w-full max-w-screen-2xl flex flex-col items-center gap-6 font-robotto text-white pt-28 px-4'>
                 <div className='w-full flex max-lg:flex-col items-center justify-evenly max-lg:gap-12'>
                     <div className='max-w-xl flex flex-col gap-12 max-lg:text-center'>
                         <h4 className='text-5xl font-bold'>

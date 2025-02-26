@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 export default function ProjectsCompnent() {
     return (
         <section className='w-full flex justify-center bg-gray-200'>
-            <div className='w-full max-w-screen-2xl flex flex-col items-center'>
+            <div className='w-full max-w-screen-2xl flex flex-col items-center px-4'>
                 <div
                     className='flex max-lg:flex-col-reverse gap-9 pt-20'
                     id='executive'

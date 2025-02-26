@@ -6,7 +6,7 @@ export default function DeskComponent() {
     return (
         <section className='w-full flex justify-center bg-neutral-800 py-16'>
             <div className='w-full max-w-screen-2xl flex items-center justify-evenly max-lg:flex-col max-lg:gap-12'>
-                <div className='max-w-xl flex flex-col gap-6 font-robotto text-white'>
+                <div className='max-w-xl flex flex-col gap-6 font-robotto text-white px-4'>
                     <h5 className='text-3xl font-extrabold pb-6 border-b'>
                         Escritório de Arquitetura - Custódio
                     </h5>

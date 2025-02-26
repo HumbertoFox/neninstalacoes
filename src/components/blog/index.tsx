@@ -1,6 +1,9 @@
 'use client';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
+import {
+    Swiper,
+    SwiperSlide
+} from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import ImgBlog0 from '@/components/images/blog/blog0.png';
@@ -16,14 +19,8 @@ import ImgBlog9 from '@/components/images/blog/blog9.png';
 import ImgBlog10 from '@/components/images/blog/blog10.png';
 import ImgBlog11 from '@/components/images/blog/blog11.jpg';
 import Link from 'next/link';
-import Image, { StaticImageData } from 'next/image';
-
-interface BlogItem {
-    src: StaticImageData;
-    title: string;
-    link: string;
-    alt: string;
-};
+import Image from 'next/image';
+import { BlogItem } from '@/interface/interfaces';
 
 const blogData: BlogItem[] = [
     { src: ImgBlog0, title: 'Por que investir em um projeto de design de interiores corporativos?', link: '#', alt: 'Texto alt Imagem' },

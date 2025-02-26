@@ -1,3 +1,10 @@
+'use client';
+
+import {
+    Swiper,
+    SwiperSlide
+} from 'swiper/react';
+import { Grid } from 'swiper/modules';
 import Image from 'next/image';
 import ImgLogo0 from '@/components/images/slide0/eneva1.png';
 import ImgLogo1 from '@/components/images/slide0/edf.png';
@@ -26,6 +33,40 @@ import ImgLogo23 from '@/components/images/slide2/tag.png';
 import ImgLogo24 from '@/components/images/slide2/ingresso.png';
 import ImgLogo25 from '@/components/images/slide2/vestas.png';
 import ImgLogo26 from '@/components/images/slide2/ecogen.png';
+import 'swiper/css';
+import 'swiper/css/grid';
+import 'swiper/css/pagination';
+import { ClientsItem } from '@/interface/interfaces';
+
+const clientsData: ClientsItem[] = [
+    { src: ImgLogo0, alt: 'Texto alt Imagem' },
+    { src: ImgLogo1, alt: 'Texto alt Imagem' },
+    { src: ImgLogo2, alt: 'Texto alt Imagem' },
+    { src: ImgLogo3, alt: 'Texto alt Imagem' },
+    { src: ImgLogo4, alt: 'Texto alt Imagem' },
+    { src: ImgLogo5, alt: 'Texto alt Imagem' },
+    { src: ImgLogo6, alt: 'Texto alt Imagem' },
+    { src: ImgLogo7, alt: 'Texto alt Imagem' },
+    { src: ImgLogo8, alt: 'Texto alt Imagem' },
+    { src: ImgLogo9, alt: 'Texto alt Imagem' },
+    { src: ImgLogo10, alt: 'Texto alt Imagem' },
+    { src: ImgLogo11, alt: 'Texto alt Imagem' },
+    { src: ImgLogo12, alt: 'Texto alt Imagem' },
+    { src: ImgLogo13, alt: 'Texto alt Imagem' },
+    { src: ImgLogo14, alt: 'Texto alt Imagem' },
+    { src: ImgLogo15, alt: 'Texto alt Imagem' },
+    { src: ImgLogo16, alt: 'Texto alt Imagem' },
+    { src: ImgLogo17, alt: 'Texto alt Imagem' },
+    { src: ImgLogo18, alt: 'Texto alt Imagem' },
+    { src: ImgLogo19, alt: 'Texto alt Imagem' },
+    { src: ImgLogo20, alt: 'Texto alt Imagem' },
+    { src: ImgLogo21, alt: 'Texto alt Imagem' },
+    { src: ImgLogo22, alt: 'Texto alt Imagem' },
+    { src: ImgLogo23, alt: 'Texto alt Imagem' },
+    { src: ImgLogo24, alt: 'Texto alt Imagem' },
+    { src: ImgLogo25, alt: 'Texto alt Imagem' },
+    { src: ImgLogo26, alt: 'Texto alt Imagem' },
+];
 
 export default function ClientsComponent() {
     return (
@@ -34,42 +75,28 @@ export default function ClientsComponent() {
                 <h2 className='text-center text-2xl font-robotto font-normal uppercase mb-7'>
                     Escritórios onde já fizemos a diferença
                 </h2>
-                <div>
-                    <div className='h-[100px] flex gap-3 items-center justify-between'>
-                        <Image src={ImgLogo0} alt='Logo eneva1' />
-                        <Image src={ImgLogo1} alt='Logo edf' />
-                        <Image src={ImgLogo2} alt='Logo lalamove' />
-                        <Image src={ImgLogo3} alt='Logo huawei' />
-                        <Image src={ImgLogo4} alt='Logo globo' />
-                        <Image src={ImgLogo5} alt='Logo bbm' />
-                        <Image src={ImgLogo6} alt='Logo nts' />
-                        <Image src={ImgLogo7} alt='Logo prudential' />
-                        <Image src={ImgLogo8} alt='Logo passeidireto' />
-                    </div>
+                <div className='w-full h-[300px] flex justify-center px-6'>
+                    <Swiper
+                        slidesPerView={5}
+                        grabCursor={true}
+                        breakpoints={{
+                            1024: {
+                                slidesPerView: 9,
+                            },
+                        }}
+                        grid={{
+                            rows: 3,
+                        }}
+                        spaceBetween={10}
+                        modules={[Grid]}
+                    >
+                        {clientsData.map((client, index) => (
+                            <SwiperSlide key={index}>
+                                <Image src={client.src} alt={client.alt} />
+                            </SwiperSlide>
 
-                    <div className='h-[100px] flex gap-3 items-center justify-between'>
-                        <Image src={ImgLogo9} alt='Logo stone' />
-                        <Image src={ImgLogo10} alt='Logo coelba' />
-                        <Image src={ImgLogo11} alt='Logo volanty' />
-                        <Image src={ImgLogo12} alt='Logo schenker' />
-                        <Image src={ImgLogo13} alt='Logo tim' />
-                        <Image src={ImgLogo14} alt='Logo atg' />
-                        <Image src={ImgLogo15} alt='Logo lam' />
-                        <Image src={ImgLogo16} alt='Logo everis' />
-                        <Image src={ImgLogo17} alt='Logo enel' />
-                    </div>
-
-                    <div className='h-[100px] flex gap-3 items-center justify-between'>
-                        <Image src={ImgLogo18} alt='Logo essilor' />
-                        <Image src={ImgLogo19} alt='Logo merck' />
-                        <Image src={ImgLogo20} alt='Logo brother' />
-                        <Image src={ImgLogo21} alt='Logo mhm' />
-                        <Image src={ImgLogo22} alt='Logo neoenergia' />
-                        <Image src={ImgLogo23} alt='Logo tag' />
-                        <Image src={ImgLogo24} alt='Logo ingresso' />
-                        <Image src={ImgLogo25} alt='Logo vestas' />
-                        <Image src={ImgLogo26} alt='Logo ecogen' />
-                    </div>
+                        ))}
+                    </Swiper>
                 </div>
             </div>
         </section>
